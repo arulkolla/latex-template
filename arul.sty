@@ -2,77 +2,77 @@
 %%NOTE: Very based on vEnhance's evan.sty ;)
 %%fakesection Argument processing
 % Default Arguments
-% We include "Evan" in all of these to make sure
+% We include "arul" in all of these to make sure
 % that they don't collide with anything in external packages
-\newif\ifevanfancy\evanfancytrue
-\newif\ifevanhdr\evanhdrtrue
-\newif\ifevanhref\evanhreftrue
-\newif\ifevansetup\evansetuptrue
-\newif\ifevanthm\evanthmtrue
-\newif\ifevansecthm\evansecthmfalse
-\newif\ifevanht\evanhtfalse
-\newif\ifevanpkg\evanpkgtrue
-\newif\ifevanpdf\evanpdftrue
-\newif\ifevanauthor\evanauthortrue
-\newif\ifevanchinese\evanchinesefalse
-\newif\ifevanmdthm\evanmdthmfalse
-\newif\ifevandiagrams\evandiagramsfalse
-\newif\ifevanpatchasy\evanpatchasyfalse
-\newif\ifevanhints\evanhintsfalse
-\newif\ifevanasy\evanasytrue
-\newif\ifevancolorsec\evancolorsecfalse
-\newif\ifevantitlemark\evantitlemarktrue
+\newif\ifarulfancy\arulfancytrue
+\newif\ifarulhdr\arulhdrtrue
+\newif\ifarulhref\arulhreftrue
+\newif\ifarulsetup\arulsetuptrue
+\newif\ifarulthm\arulthmtrue
+\newif\ifarulsecthm\arulsecthmfalse
+\newif\ifarulht\arulhtfalse
+\newif\ifarulpkg\arulpkgtrue
+\newif\ifarulpdf\arulpdftrue
+\newif\ifarulauthor\arulauthortrue
+\newif\ifarulchinese\arulchinesefalse
+\newif\ifarulmdthm\arulmdthmfalse
+\newif\ifaruldiagrams\aruldiagramsfalse
+\newif\ifarulpatchasy\arulpatchasyfalse
+\newif\ifarulhints\arulhintsfalse
+\newif\ifarulasy\arulasytrue
+\newif\ifarulcolorsec\arulcolorsecfalse
+\newif\ifarultitlemark\arultitlemarktrue
 
 %Receive Arguments
-\DeclareOption{chinese}{\evanhreffalse\evanchinesetrue} % Chinese support
+\DeclareOption{chinese}{\arulhreffalse\arulchinesetrue} % Chinese support
 % allow href to override this one
 
-\DeclareOption{sexy}{\evansecthmtrue\evanmdthmtrue\evancolorsectrue} % long docs
+\DeclareOption{sexy}{\arulsecthmtrue\arulmdthmtrue\arulcolorsectrue} % long docs
 
-\DeclareOption{fancy}{\evanfancytrue}
-\DeclareOption{nofancy}{\evanfancyfalse}
-\DeclareOption{hdr}{\evanhdrtrue}
-\DeclareOption{nohdr}{\evanhdrfalse}
-\DeclareOption{href}{\evanhreftrue}
-\DeclareOption{nohref}{\evanhreffalse}
+\DeclareOption{fancy}{\arulfancytrue}
+\DeclareOption{nofancy}{\arulfancyfalse}
+\DeclareOption{hdr}{\arulhdrtrue}
+\DeclareOption{nohdr}{\arulhdrfalse}
+\DeclareOption{href}{\arulhreftrue}
+\DeclareOption{nohref}{\arulhreffalse}
 
-\DeclareOption{nosetup}{\evansetupfalse}
-\DeclareOption{thm}{\evanthmtrue}
-\DeclareOption{nothm}{\evanthmfalse}
-\DeclareOption{secthm}{\evansecthmtrue}
-\DeclareOption{nosecthm}{\evansecthmfalse}
+\DeclareOption{nosetup}{\arulsetupfalse}
+\DeclareOption{thm}{\arulthmtrue}
+\DeclareOption{nothm}{\arulthmfalse}
+\DeclareOption{secthm}{\arulsecthmtrue}
+\DeclareOption{nosecthm}{\arulsecthmfalse}
 
-\DeclareOption{ht}{\evanhttrue}
-\DeclareOption{nopdf}{\evanpdffalse}
-\DeclareOption{nopkg}{\evanpkgfalse}
-\DeclareOption{noauthor}{\evanauthorfalse}
-\DeclareOption{titlemark}{\evantitlemarktrue} % Sets title in ohead, not \rightmark
-\DeclareOption{sectionmark}{\evantitlemarkfalse} % Uses \rightmark not title in ohead
+\DeclareOption{ht}{\arulhttrue}
+\DeclareOption{nopdf}{\arulpdffalse}
+\DeclareOption{nopkg}{\arulpkgfalse}
+\DeclareOption{noauthor}{\arulauthorfalse}
+\DeclareOption{titlemark}{\arultitlemarktrue} % Sets title in ohead, not \rightmark
+\DeclareOption{sectionmark}{\arultitlemarkfalse} % Uses \rightmark not title in ohead
 
-\DeclareOption{mdthm}{\evanmdthmtrue}
-\DeclareOption{nomdthm}{\evanmdthmfalse}
-\DeclareOption{diagrams}{\evandiagramstrue}
-\DeclareOption{nodiagrams}{\evandiagramsfalse}
-\DeclareOption{colorsec}{\evancolorsectrue}
-\DeclareOption{nocolorsec}{\evancolorsecfalse}
+\DeclareOption{mdthm}{\arulmdthmtrue}
+\DeclareOption{nomdthm}{\arulmdthmfalse}
+\DeclareOption{diagrams}{\aruldiagramstrue}
+\DeclareOption{nodiagrams}{\aruldiagramsfalse}
+\DeclareOption{colorsec}{\arulcolorsectrue}
+\DeclareOption{nocolorsec}{\arulcolorsecfalse}
 
-\DeclareOption{patchasy}{\evanpatchasytrue}
-\DeclareOption{noasy}{\evanasyfalse}
+\DeclareOption{patchasy}{\arulpatchasytrue}
+\DeclareOption{noasy}{\arulasyfalse}
 
-\DeclareOption{hints}{\evanhintstrue}
+\DeclareOption{hints}{\arulhintstrue}
 
 \ProcessOptions\relax
 
 % if packages not loaded, turn off mdthm and asy
-\ifevanpkg\else\evanmdthmfalse\fi
-\ifevanpkg\else\evanasyfalse\fi
+\ifarulpkg\else\arulmdthmfalse\fi
+\ifarulpkg\else\arulasyfalse\fi
 
 % If no setup, turn off theorems
-\ifevansetup\else\evanthmfalse\fi
+\ifarulsetup\else\arulthmfalse\fi
 
 %%fakesection Some macros
 %Small commands
-\ifevanpkg
+\ifarulpkg
 	\usepackage{amsmath,amssymb}
 \fi
 \newcommand{\cbrt}[1]{\sqrt[3]{#1}}
@@ -227,8 +227,8 @@
 	{\end{mdframed}}
 
 %%fakesection Asymptote setup
-\ifevanasy
-	\ifevanpatchasy
+\ifarulasy
+	\ifarulpatchasy
 		\usepackage{patch-asy}
 	\else
 		\usepackage{asymptote}
@@ -282,27 +282,27 @@
 %%fakesection BEGIN MAIN SETUP
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ifevansetup
+\ifarulsetup
 	%%fakesection Set up author and date
-	\ifevanauthor
-		\author{Evan Chen}
+	\ifarulauthor
+		\author{arul Chen}
 		\date{\today}
 	\fi
 	%%fakesection Hyperref
-	\ifevanpkg
+	\ifarulpkg
 		\PassOptionsToPackage{usenames,svgnames,dvipsnames}{xcolor}
 		\usepackage{xcolor}
-		\ifevanhref
+		\ifarulhref
 			\usepackage[colorlinks=true]{hyperref}
 			\hypersetup{urlcolor=RubineRed,linkcolor=RoyalBlue,citecolor=ForestGreen}
 		\fi
 		\usepackage[nameinlink]{cleveref}
 	\fi
 	%%fakesection New Theorem Styles
-	\ifevanthm
+	\ifarulthm
 		\usepackage{amsthm}
 	\fi
-	\ifevanmdthm
+	\ifarulmdthm
 		\usepackage{amsthm} % needed for nothm+mdthm
 		\usepackage{thmtools}
 		\usepackage[framemethod=TikZ]{mdframed}
@@ -379,11 +379,11 @@
 		\newcommand{\listhack}{$\empty$\vspace{-2em}}
 	\fi
 	%%fakesection Theorem setup
-	\ifevanthm
+	\ifarulthm
 		\theoremstyle{plain}
 		%Branching here: the option secthm changes theorems to be labelled by section
-		\ifevanmdthm
-			\ifevansecthm
+		\ifarulmdthm
+			\ifarulsecthm
 				\declaretheorem[%
 				style=thmbluebox,name=Theorem,numberwithin=section]{theorem}
 			\else
@@ -398,7 +398,7 @@
 			\declaretheorem[style=thmbluebox,name=Proposition,numbered=no]{proposition*}
 			\declaretheorem[style=thmbluebox,name=Corollary,numbered=no]{corollary*}
 		\else
-			\ifevansecthm
+			\ifarulsecthm
 				\newtheorem{theorem}{Theorem}[section]
 			\else
 				\newtheorem{theorem}{Theorem}
@@ -415,7 +415,7 @@
 		%Def-style theorems
 		\theoremstyle{definition}
 		% This ought to be a real theorem, but would be too much italics
-		\ifevanmdthm
+		\ifarulmdthm
 			\declaretheorem[style=thmgreenbox,name=Algorithm,sibling=theorem]{algorithm}
 			\declaretheorem[style=thmgreenbox,name=Algorithm,numbered=no]{algorithm*}
 			\declaretheorem[style=thmgreenbox,name=Claim,sibling=theorem]{claim}
@@ -443,7 +443,7 @@
 		\newtheorem*{ques*}{Question}
 		\newtheorem*{exercise*}{Exercise}
 		\newtheorem*{problem*}{Problem}
-		\ifevanmdthm
+		\ifarulmdthm
 			\declaretheorem[style=thmredbox,name=Example,sibling=theorem]{example}
 			\declaretheorem[style=thmredbox,name=Example,numbered=no]{example*}
 		\else
@@ -452,7 +452,7 @@
 		\fi
 		% Remark-style theorems
 		%\theoremstyle{remark}
-		\ifevanmdthm
+		\ifarulmdthm
 			\declaretheorem[style=thmblackbox,name=Remark,sibling=theorem]{remark}
 			\declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
 		\else
@@ -465,7 +465,7 @@
 		\newtheorem*{abuse*}{Abuse of Notation}
 	\fi
 	%%fakesection Fancy section and chapter heads
-	\ifevancolorsec
+	\ifarulcolorsec
 		\@ifundefined{KOMAClassName}{}{
 			\@ifundefined{chapter}{}{
 				\addtokomafont{partprefix}{\rmfamily}
@@ -489,7 +489,7 @@
 		}
 	\fi
 	%%fakesection Loads a bunch of useful packages (but allow disabling)
-	\ifevanpkg
+	\ifarulpkg
 		\IfFileExists{von.sty}{\usepackage{von}}{}
 		\usepackage{listings}
 		\usepackage{mathrsfs}
@@ -534,7 +534,7 @@
 	\providecommand{\theauthor}{\@author}
 	\providecommand{\thedate}{\@date}
 	%%fakesection Commutative diagrams support
-	\ifevandiagrams
+	\ifaruldiagrams
 		\usepackage{diagrams}
 		\newarrow{Inj}C--->
 		\newarrow{Surj}----{>>}
@@ -551,7 +551,7 @@
 		\tikzcdset{row sep/normal=3.14em,column sep/normal=3.14em}
 	\fi
 	%%fakesection Page Setup
-	\ifevanfancy
+	\ifarulfancy
 		\@ifundefined{KOMAClassName}
 		{
 			\usepackage{fancyhdr}
@@ -565,11 +565,11 @@
 			\setlength{\textheight}{8.75in}
 			\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 			\setlength{\footskip}{0.3in}
-			\ifevanhdr
+			\ifarulhdr
 				\renewcommand{\headrulewidth}{0.5pt}
 				\renewcommand{\footrulewidth}{0.0pt}
 				\pagestyle{fancy}
-				\lhead{Evan Chen}
+				\lhead{arul Chen}
 				\chead{}
 				\rhead{\nouppercase{\leftmark}}
 				\lfoot{}
@@ -591,7 +591,7 @@
 		}
 	\fi
 	%%fakesection Chinese support
-	\ifevanchinese
+	\ifarulchinese
 		\usepackage[encapsulated]{CJK}
 		\usepackage{ucs}
 		\usepackage[utf8x]{inputenc}
@@ -601,7 +601,7 @@
 		\AtEndDocument{\end{CJK}}
 	\fi
 	%%fakesection Hints
-	\ifevanhints
+	\ifarulhints
 		\usepackage{answers}
 		\Newassociation{hint}{hintitem}{hints}
 		\renewcommand{\solutionextension}{out}
