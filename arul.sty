@@ -23,10 +23,6 @@
 \newif\ifarulcolorsec\arulcolorsecfalse
 \newif\ifarultitlemark\arultitlemarktrue
 
-%Receive Arguments
-\DeclareOption{chinese}{\arulhreffalse\arulchinesetrue} % Chinese support
-% allow href to override this one
-
 \DeclareOption{epic}{\arulsecthmtrue\arulmdthmtrue\arulcolorsectrue} % long docs
 
 \DeclareOption{fancy}{\arulfancytrue}
@@ -589,16 +585,6 @@
 			\ohead{\footnotesize\textbf{\thetitle}}
 			\cfoot{\pagemark}
 		}
-	\fi
-	%%fakesection Chinese support
-	\ifarulchinese
-		\usepackage[encapsulated]{CJK}
-		\usepackage{ucs}
-		\usepackage[utf8x]{inputenc}
-		\newenvironment{bsmi}{\begin{CJK}{UTF8}{bsmi}}{\end{CJK}}
-		\newcommand{\cn}[1]{\begin{bsmi}#1\end{bsmi}}
-		\AtBeginDocument{\begin{CJK}{UTF8}{bsmi}}
-		\AtEndDocument{\end{CJK}}
 	\fi
 	%%fakesection Hints
 	\ifarulhints
